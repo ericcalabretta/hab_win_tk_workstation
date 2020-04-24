@@ -1,5 +1,10 @@
-#
-# Cookbook:: hab_win_tk_workstation
-# Recipe:: default
-#
-# Copyright:: 2019, The Authors, All Rights Reserved.
+include_recipe 'chocolatey::default'
+
+chocolatey_package 'GoogleChrome' do
+  options '--ignorechecksum'
+end
+chocolatey_package 'VisualStudioCode'
+
+chocolatey_package 'git'
+
+chocolatey_package 'Habitat'
