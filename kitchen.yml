@@ -42,6 +42,12 @@ platforms:
   - name: windows-2019
     driver:
       image_id: ami-0791882722a752013
+      block_device_mappings:
+        - device_name: /dev/sda1
+          ebs:
+            volume_type: gp2
+            volume_size: 100
+            delete_on_termination: true
     transport:
       name: winrm
       elevated: true
@@ -53,3 +59,7 @@ suites:
       inspec_tests:
         - test/integration/default
     attributes:
+
+
+
+
